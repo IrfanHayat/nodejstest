@@ -2,7 +2,8 @@ import AdminSchema from "../models/admin";
 import WorkersSchema from "../models/workers";
 
 export const addAdmin = async () => {
-  let admin = await AdminSchema.findOne({ adminName: "Ali" });
+  let admin = await AdminSchema.find({ adminName: "Ali" });
+  
   if (admin) {
     return { message: "Admin already Exist" };
   } else {
@@ -24,4 +25,6 @@ export const getWorkerReports = async () => {
   if (count) {
     return { message: `Absent workers are ${count}` };
   }
+  
+
 };
