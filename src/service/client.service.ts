@@ -20,3 +20,24 @@ export const addClient = async (clientData) => {
     }
   }
 };
+
+
+export const updateClient=async (clientData,id)=>{
+ 
+ let clientUpdate= await ClientSchema.findOneAndUpdate(
+    { id },
+    {
+      $set: clientData,
+    },
+  )
+  if (clientUpdate){
+    return {message:"Update Client Successfull"}
+  }else{
+    return {message:"Error"}
+  }
+   
+
+}
+
+
+

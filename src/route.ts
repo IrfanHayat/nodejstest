@@ -9,6 +9,7 @@ import * as workerController from "./controllers/worker.controller";
 export const route = (server) => {
   server.post("/addCompany", companyController.addCompany);
   server.post("/addClient", clientController.addClient);
+  server.put('/updateClient/:_id', clientController.updateClient)
   server.post("/addAdmin", adminController.addAdmin);
   server.post("/addSites", sitesController.addSites);
   server.post("/addWorker", workerController.addWorkers);
